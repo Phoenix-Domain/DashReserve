@@ -1,0 +1,68 @@
+/* Reset all browser default styling */
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+/* Root variables */
+:root{
+  --body-bg-color:rgb(177, 168, 168);
+  --card-bg-color:rgb(221, 210, 210);
+  --btn-bg-color:blue;
+  --accent-color:rgb(105, 124, 177);
+}
+
+/* Body Styles */
+body{
+  background: var(--body-bg-color);
+}
+
+header h1{
+  text-align: center;
+}
+
+/* Card Styles */
+.card{
+  background: var(--card-bg-color);
+  padding:1rem;
+  max-width:70%;
+  margin:2rem auto;
+  border-radius: 1rem;
+}
+
+.card *{
+  margin:1rem;
+  padding:0.2rem;
+  border-radius: 1rem;
+  border:1px solid transparent;
+  font-size:1rem;
+}
+
+.card *:focus{
+  outline:none;
+  border: 2px solid var(--accent-color);
+}
+
+.card label input{
+  padding:0.5rem;
+}
+
+.card label{
+  font-size:1.2rem;
+}
+
+.card button, .card #bookingDate:hover{
+  padding: 0.8rem 1.3rem;
+  border-radius: 2rem;
+  background: var(--btn-bg-color);
+  color:whitesmoke
+}
+
+.card #bookingDate, .card button:hover{
+  padding: 0.8rem 1.3rem;
+  border-radius: 2rem;
+  color:#000;
+  background: whitesmoke;
+  transition: all 0.3s ease-in-out;
+}
