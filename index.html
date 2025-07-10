@@ -8,6 +8,26 @@
   <title>DashReserve</title>
 </head>
 <body>
-  
+  <header>
+  <h1>Client Booking Dashboard</h1>
+</header>
+
+<main>
+  <form id="bookingForm">
+    <input type="text" id="clientName" placeholder="Client Name" />
+    <select id="serviceType">
+      <option value="Select Service">Select Service</option>
+      <option value="Website Design">Website Design</option>
+      <option value="Consultation">Consultation</option>
+      <!-- Add more -->
+    </select>
+    <input type="date" id="bookingDate" />
+    <button id="addBookingBtn">Book Now</button>
+  </form>
+
+  <section id="bookingList">
+    <!-- Bookings will be displayed here -->
+  </section>
+</main>
 </body>
 </html>
