@@ -9,12 +9,15 @@
 </head>
 <body>
   <header>
-  <h1>Client Booking Dashboard</h1>
-</header>
+    <h1>Client Booking Dashboard</h1>
+  </header>
 
 <main>
-  <form id="bookingForm">
+  <form id="bookingForm" class="card">
+    <label for="clientName">Client Name: <br>
     <input type="text" id="clientName" placeholder="Client Name" />
+    </label>
+   
     <select id="serviceType">
       <option value="Select Service">Select Service</option>
       <option value="Website Design">Website Design</option>
@@ -25,7 +28,7 @@
     <button id="addBookingBtn">Book Now</button>
   </form>
 
-  <section id="bookingList">
+  <section id="bookingList" class="card">
     <!-- Bookings will be displayed here -->
   </section>
 </main>
