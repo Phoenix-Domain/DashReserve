@@ -24,7 +24,14 @@ const displayBooking = x => {
   const list = document.createElement('li');
   const delBtn = document.createElement('button');
   delBtn.textContent = "Delete";
+  delBtn.addEventListener('click', () => {
+    delBooking(list);
+  })
   list.textContent = `${x.name} booked ${x.service} on ${x.date}`;
+  list.append(delBtn)
   bookingList.append(list);
-  bookingList.append(delBtn);
+}
+
+const delBooking = x => {
+  x.remove();
 }
