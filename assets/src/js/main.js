@@ -3,6 +3,7 @@ class MakeUser{
   this.name = name
   this.date = date
   this.service = service
+  this.id = Date.now();
 }}
 const clientName = document.querySelector('#clientName');
 const serviceType = document.querySelector('#serviceType');
@@ -29,6 +30,10 @@ addBookingBtn.addEventListener('click', e => {
   }else{
     alert('Please fill all fields')
   }
+  clientName.value = "";
+  serviceType.value = "Select Service";
+  bookingDate.value= "";
+
 })
 
 function displayBooking (x){
@@ -37,7 +42,7 @@ function displayBooking (x){
   delBtn.textContent = "Delete";
   delBtn.addEventListener('click', () => {
     delBooking(list);
-    userArray = userArray.filter(item => item !== x);
+    userArray = userArray.filter(item => item.id !== x.id);
     saveUser(userArray);
   })
   list.textContent = `${x.name} booked ${x.service} on ${x.date}`;
