@@ -9,7 +9,10 @@ const serviceType = document.querySelector('#serviceType');
 const bookingDate = document.querySelector('#bookingDate');
 const addBookingBtn = document.querySelector('#addBookingBtn');
 const bookingList = document.querySelector('#bookingList');
-let userArray = [];
+let userArray = getUser() || [];
+userArray.forEach(element => {
+  displayBooking(element);
+});
 
 addBookingBtn.addEventListener('click', e => {
   e.preventDefault();
@@ -22,19 +25,20 @@ addBookingBtn.addEventListener('click', e => {
     let user = new MakeUser(nameValue,serviceValue,dateValue);
     displayBooking(user);
     userArray.push(user);
-    console.log(userArray)
+    saveUser(userArray);
   }else{
     alert('Please fill all fields')
   }
 })
 
-const displayBooking = x => {
+function displayBooking (x){
   const list = document.createElement('li');
   const delBtn = document.createElement('button');
   delBtn.textContent = "Delete";
   delBtn.addEventListener('click', () => {
     delBooking(list);
     userArray = userArray.filter(item => item !== x);
+    saveUser(userArray);
   })
   list.textContent = `${x.name} booked ${x.service} on ${x.date}`;
   list.append(delBtn)
@@ -46,9 +50,9 @@ const delBooking = x => {
 }
 
 const saveUser = x => {
-  localStorage.setItem('User', JSON.stringify(userArray));
+  localStorage.setItem('User', JSON.stringify(x));
 }
 
-const getUser = x => {
-  JSON.parse(localStorage.getItem('User'))
+function getUser(){
+  return JSON.parse(localStorage.getItem('User'))
 }
