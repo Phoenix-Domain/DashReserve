@@ -44,3 +44,11 @@ const displayBooking = x => {
 const delBooking = x => {
   x.remove();
 }
+
+const saveUser = x => {
+  localStorage.setItem('User', JSON.stringify(userArray));
+}
+
+const getUser = x => {
+  JSON.parse(localStorage.getItem('User'))
+}
