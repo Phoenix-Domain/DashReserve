@@ -9,15 +9,23 @@ const serviceType = document.querySelector('#serviceType');
 const bookingDate = document.querySelector('#bookingDate');
 const addBookingBtn = document.querySelector('#addBookingBtn');
 const bookingList = document.querySelector('#bookingList');
+let userArray = [];
 
 addBookingBtn.addEventListener('click', e => {
   e.preventDefault();
-  const nameValue = clientName.value;
-  const serviceValue = serviceType.value;
-  const dateValue = bookingDate.value;
+  const nameValue = clientName.value.trim();
+  const serviceValue = serviceType.value.trim();
+  const dateValue = bookingDate.value.trim();
 
-  let user = new MakeUser(nameValue,serviceValue,dateValue);
-  displayBooking(user);
+  
+  if(nameValue && serviceValue && dateValue){
+    let user = new MakeUser(nameValue,serviceValue,dateValue);
+    displayBooking(user);
+    userArray.push(user);
+    console.log(userArray)
+  }else{
+    alert('Please fill all fields')
+  }
 })
 
 const displayBooking = x => {
@@ -26,6 +34,7 @@ const displayBooking = x => {
   delBtn.textContent = "Delete";
   delBtn.addEventListener('click', () => {
     delBooking(list);
+    userArray = userArray.filter(item => item !== x);
   })
   list.textContent = `${x.name} booked ${x.service} on ${x.date}`;
   list.append(delBtn)
