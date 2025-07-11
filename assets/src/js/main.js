@@ -1,7 +1,7 @@
-function MakeUser = (name,service,date){
+function MakeUser(name,service,date){
   this.name = name
   this.date = date
-  this.service = service;
+  this.service = service
 }
 const clientName = document.querySelector('#clientName');
 const servicetype = document.querySelector('#serviceType');
