@@ -13,7 +13,12 @@
   </header>
 
 <main>
-  <form id="bookingForm" class="card">
+  <section class="card">
+    <label>🔎
+      <input type="text" id="searchInput" class="searchInput" placeholder="Search by name or service">
+    </label>
+    <form id="bookingForm" class="card">
+    
     <label for="clientName">Client Name: <br>
     <input type="text" id="clientName" placeholder="Client Name" />
     </label>
@@ -30,6 +35,7 @@
     
     <button id="addBookingBtn">Book Now</button>
   </form>
+  </section>
 
   <ol id="bookingList" class="card">
     <!-- Bookings will be displayed here -->
