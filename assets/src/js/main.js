@@ -36,6 +36,8 @@ addBookingBtn.addEventListener('click', e => {
   
   if(nameValue && serviceValue && dateValue){
     let user = new MakeUser(nameValue,serviceValue,dateValue);
+
+    if(checkDuplicateEntry(userArray,user)) return;
     displayBooking(user);
     userArray.push(user);
 
@@ -102,4 +104,16 @@ function getUser(){
 function renderList(x){
   bookingList.innerHTML = "";
   x.forEach(element => displayBooking(element));
+}
+
+function checkDuplicateEntry(x,y){
+  const isDuplicate = x.some(u => u.name === y.name && u.service === y.service && u.date === y.date);
+  //Check if booking already exists
+
+  if(isDuplicate){
+    alert('This Booking Already Exists');
+    return true;
+  } else{
+    return false;
+  }
 }
