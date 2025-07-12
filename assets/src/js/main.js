@@ -74,7 +74,9 @@ searchInput.addEventListener('input', () => {
 });
 //For Search Input
 
-
+clearBtn.addEventListener('click', () => {
+  clearAllBookings();
+})
 
 
 //Functions
@@ -139,4 +141,11 @@ function checkDuplicateEntry(x,y){
     return false;
   }
 };
+
+function clearAllBookings(){
+  bookingList.innerHTML = "";
+  userArray.length = 0;
+  localStorage.removeItem('User');
+  showBookingCount();
+}
 
