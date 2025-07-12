@@ -13,7 +13,13 @@
   </header>
 
 <main>
-  <form id="bookingForm" class="card">
+  <section class="card">
+    <label for="searchInput" id="searchInputLabel">🔎
+      <input type="text" id="searchInput" class="searchInput" placeholder="Search by name or service">
+    </label>
+    <p id="bookingCount">You have <span id="count" class="count"></span> current booking<span id="plural" class="plural">(s)</span></p>
+    <form id="bookingForm" class="card">
+    
     <label for="clientName">Client Name: <br>
     <input type="text" id="clientName" placeholder="Client Name" />
     </label>
@@ -21,6 +27,8 @@
     <select id="serviceType">
       <option value="Select Service">Select Service</option>
       <option value="Website Design">Website Design</option>
+      <option value="Website Development">Website Development</option>
+      <option value="Monthly Servicing">Monthly Servicing</option>
       <option value="Consultation">Consultation</option>
       <!-- Add more -->
     </select>
@@ -28,6 +36,8 @@
     
     <button id="addBookingBtn">Book Now</button>
   </form>
+    <button id="clearBtn">Clear All</button>
+  </section>
 
   <ol id="bookingList" class="card">
     <!-- Bookings will be displayed here -->
