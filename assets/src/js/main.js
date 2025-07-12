@@ -48,6 +48,7 @@ addBookingBtn.addEventListener('click', e => {
     userArray = userArray.sort((a,b) => new Date(a.date) - new Date(b.date)); //sort the array by earlier dates
 
     saveUser(userArray);
+    showBookingCount();
 
   }else{
     alert('Please fill all fields')
@@ -99,6 +100,7 @@ function displayBooking (x){
     userArray = userArray.sort((a,b) => new Date(a.date) - new Date(b.date)); //sort the array by earlier dates
 
     saveUser(userArray);
+    showBookingCount();
   })
 
   list.textContent = `${x.name} booked ${x.service} on ${x.date}`;
