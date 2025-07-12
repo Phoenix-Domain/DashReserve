@@ -78,6 +78,10 @@ searchInput.addEventListener('input', () => {
 //Functions
 function showBookingCount(){
   count.textContent = `${userArray.length}`;
+
+  if(userArray.length > 1){
+    plural.style.display = "inline-block"
+  }
 }
 
 
