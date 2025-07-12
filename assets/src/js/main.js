@@ -10,7 +10,9 @@ const serviceType = document.querySelector('#serviceType');
 const bookingDate = document.querySelector('#bookingDate');
 const addBookingBtn = document.querySelector('#addBookingBtn');
 const bookingList = document.querySelector('#bookingList');
+
 let userArray = getUser() || [];
+userArray = userArray.sort((a,b) => new Date(a.date) - new Date(b.date));
 userArray.forEach(element => {
   displayBooking(element);
 });
@@ -26,6 +28,9 @@ addBookingBtn.addEventListener('click', e => {
     let user = new MakeUser(nameValue,serviceValue,dateValue);
     displayBooking(user);
     userArray.push(user);
+
+    userArray = userArray.sort((a,b) => new Date(a.date) - new Date(b.date)); //sort the array by earlier dates
+
     saveUser(userArray);
   }else{
     alert('Please fill all fields')
@@ -39,14 +44,23 @@ addBookingBtn.addEventListener('click', e => {
 function displayBooking (x){
   const list = document.createElement('li');
   const delBtn = document.createElement('button');
+
   delBtn.textContent = "Delete";
+
   delBtn.addEventListener('click', () => {
     delBooking(list);
-    userArray = userArray.filter(item => item.id !== x.id);
+
+    userArray = userArray.filter(item => item.id !== x.id); //Remove the deleted list from the array
+
+    userArray = userArray.sort((a,b) => new Date(a.date) - new Date(b.date)); //sort the array by earlier dates
+
     saveUser(userArray);
   })
+
   list.textContent = `${x.name} booked ${x.service} on ${x.date}`;
-  list.append(delBtn)
+
+  list.append(delBtn);
+
   bookingList.append(list);
 }
 
