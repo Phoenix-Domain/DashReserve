@@ -14,7 +14,7 @@ const bookingDate = document.querySelector('#bookingDate');
 const addBookingBtn = document.querySelector('#addBookingBtn');
 const searchInput = document.querySelector('#searchInput');
 const bookingList = document.querySelector('#bookingList');
-const bookingCount = document.querySelector('#bookingCount')
+const count = document.querySelector('#count');
 //DOM variables
 
 
@@ -25,6 +25,8 @@ userArray.forEach(element => {
   displayBooking(element);
 });
 //To display list when page loads
+
+showBookingCount();
 
 
 //Event Listeners
@@ -45,15 +47,18 @@ addBookingBtn.addEventListener('click', e => {
     userArray = userArray.sort((a,b) => new Date(a.date) - new Date(b.date)); //sort the array by earlier dates
 
     saveUser(userArray);
+
   }else{
     alert('Please fill all fields')
   }
+
   clientName.value = "";
   serviceType.value = "Select Service";
   bookingDate.value= "";
 
 });
 //for booking button
+
 
 
 searchInput.addEventListener('input', () => {
@@ -65,6 +70,14 @@ searchInput.addEventListener('input', () => {
   renderList(filtered);
 });
 //For Search Input
+
+
+
+
+//Functions
+function showBookingCount(){
+  count.textContent = `${userArray.length}`;
+}
 
 
 function displayBooking (x){
@@ -117,4 +130,5 @@ function checkDuplicateEntry(x,y){
   } else{
     return false;
   }
-}
+};
+
