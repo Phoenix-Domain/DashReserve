@@ -4,19 +4,29 @@ class MakeUser{
   this.date = date
   this.service = service
   this.id = Date.now();
-}}
+}} 
+//user class object
+
+
 const clientName = document.querySelector('#clientName');
 const serviceType = document.querySelector('#serviceType');
 const bookingDate = document.querySelector('#bookingDate');
 const addBookingBtn = document.querySelector('#addBookingBtn');
+const searchInput = document.querySelector('#searchInput');
 const bookingList = document.querySelector('#bookingList');
+//DOM variables
+
+
 
 let userArray = getUser() || [];
 userArray = userArray.sort((a,b) => new Date(a.date) - new Date(b.date));
 userArray.forEach(element => {
   displayBooking(element);
 });
+//To display list when page loads
 
+
+//Event Listeners
 addBookingBtn.addEventListener('click', e => {
   e.preventDefault();
   const nameValue = clientName.value.trim();
@@ -39,7 +49,20 @@ addBookingBtn.addEventListener('click', e => {
   serviceType.value = "Select Service";
   bookingDate.value= "";
 
-})
+});
+//for booking button
+
+
+searchInput.addEventListener('input', () => {
+  const value = searchInput.value.toLowerCase().trim();
+
+  const filtered = userArray.filter(x => x.name.toLowerCase().includes(value) || x.service.toLowerCase().includes(value));
+  //Returns an array matching the value of the search input
+
+  renderList(filtered);
+});
+//For Search Input
+
 
 function displayBooking (x){
   const list = document.createElement('li');
@@ -74,4 +97,9 @@ const saveUser = x => {
 
 function getUser(){
   return JSON.parse(localStorage.getItem('User'))
+}
+
+function renderList(x){
+  bookingList.innerHTML = "";
+  x.forEach(element => displayBooking(element));
 }
