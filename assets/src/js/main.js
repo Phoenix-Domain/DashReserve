@@ -16,6 +16,7 @@ const searchInput = document.querySelector('#searchInput');
 const bookingList = document.querySelector('#bookingList');
 const count = document.querySelector('#count');
 const plural = document.querySelector('#plural');
+const clearBtn = document.querySelector('#clearBtn');
 //DOM variables
 
 
