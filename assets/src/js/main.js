@@ -14,6 +14,7 @@ const bookingDate = document.querySelector('#bookingDate');
 const addBookingBtn = document.querySelector('#addBookingBtn');
 const searchInput = document.querySelector('#searchInput');
 const bookingList = document.querySelector('#bookingList');
+const bookingCount = document.querySelector('#bookingCount')
 //DOM variables
 
 
