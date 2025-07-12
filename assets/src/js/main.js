@@ -75,7 +75,9 @@ searchInput.addEventListener('input', () => {
 //For Search Input
 
 clearBtn.addEventListener('click', () => {
-  clearAllBookings();
+  if(confirm("Are you sure you want to clear all bookings")){
+    clearAllBookings();
+  }
 })
 
 
