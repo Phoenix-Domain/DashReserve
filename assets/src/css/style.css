@@ -66,3 +66,19 @@ header h1{
   background: whitesmoke;
   transition: all 0.3s ease-in-out;
 }
+
+#searchInput{
+  background: var(--body-bg-color);
+}
+
+#searchInput:focus{
+  border:none;
+}
+
+#searchInputLabel{
+  border:1px solid black;
+  padding: 0.8rem;
+  width:100%;
+  border:1px solid var(--card-bg-color);
+  background: var(--body-bg-color);
+}
