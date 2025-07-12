@@ -82,3 +82,9 @@ header h1{
   border:1px solid var(--card-bg-color);
   background: var(--body-bg-color);
 }
+
+#count{
+  font-weight:bold;
+  color:var(--btn-bg-color);
+  font-size:1.4rem;
+}
