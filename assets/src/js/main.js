@@ -15,6 +15,7 @@ const addBookingBtn = document.querySelector('#addBookingBtn');
 const searchInput = document.querySelector('#searchInput');
 const bookingList = document.querySelector('#bookingList');
 const count = document.querySelector('#count');
+const plural = document.querySelector('#plural');
 //DOM variables
 
 
