@@ -151,8 +151,10 @@ function getUser(){
 }
 
 function renderList(x){
+  displayTab(bookingList);
   bookingList.innerHTML = "";
   x.forEach(element => displayBooking(element));
+  
 }
 
 function checkDuplicateEntry(x,y){
