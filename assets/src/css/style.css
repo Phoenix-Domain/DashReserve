@@ -52,14 +52,14 @@ header h1{
   font-size:1.2rem;
 }
 
-.card button, .card #bookingDate:hover{
+.card #bookingDate:hover, button, .card button{
   padding: 0.8rem 1.3rem;
   border-radius: 2rem;
   background: var(--btn-bg-color);
   color:whitesmoke
 }
 
-.card #bookingDate, .card button:hover{
+.card #bookingDate, button:hover{
   padding: 0.8rem 1.3rem;
   border-radius: 2rem;
   color:#000;
