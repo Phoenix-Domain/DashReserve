@@ -143,7 +143,7 @@ exportBtn.addEventListener('click', () => {
   a.click();
 
   URL.revokeObjectURL(url);
-});
+}); //CSV Export functionality
 
 
 
