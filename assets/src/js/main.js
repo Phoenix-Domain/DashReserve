@@ -20,11 +20,16 @@ const clearBtn = document.querySelector('#clearBtn');
 const allNavTabs = document.querySelectorAll('.navTabs');
 //DOM variables
 
-allNavTabs.forEach(tab => {
+allNavTabs.forEach((tab, i) => {
   tab.addEventListener('click',() => {
-    let tabElement = document.querySelector(`#${tab.dataset.tab}`);
 
-    displayTab(tabElement)
+    const tabElement = document.querySelector(`#${tab.dataset.tab}`);
+
+    const otherTabs = document.querySelectorAll(".tabContent");
+    hideTab(otherTabs);
+
+    displayTab(tabElement);
+    
   })
 });
 
@@ -157,5 +162,14 @@ function clearAllBookings(){
   userArray.length = 0;
   localStorage.removeItem('User');
   showBookingCount();
+};
+
+function displayTab(x){
+  x.style.display = "block";
 }
 
+function hideTab(x){
+  x.forEach(content => {
+      content.style.display = "none";
+    });
+}
