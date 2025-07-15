@@ -69,19 +69,27 @@ header h1{
 
 #searchInput{
   background: var(--body-bg-color);
+  border:none;
+  font-size: 1.2rem;
 }
 
 #searchInput:focus{
   border:none;
+  outline:none;
 }
 
 #searchInputLabel{
-  border:1px solid black;
   padding: 0.8rem;
-  width:100%;
   border:1px solid var(--card-bg-color);
+  border-radius: 2rem;
+  color:var(--btn-bg-color);
   background: var(--body-bg-color);
 }
+
+#searchInputLabel:focus{
+  box-shadow: 0 0 5px var(--accent-color);
+}
+
 
 #count{
   font-weight:bold;
@@ -96,6 +104,6 @@ header h1{
 }
 
 #searchBar{
-  width:fit-content;
+  width:50%;
   margin:2rem auto;
 }
