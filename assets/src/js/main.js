@@ -20,6 +20,13 @@ const clearBtn = document.querySelector('#clearBtn');
 const allNavTabs = document.querySelectorAll('.navTabs');
 //DOM variables
 
+allNavTabs.forEach(tab => {
+  tab.addEventListener('click',() => {
+    let tabElement = document.querySelector(`#${tab.dataset.tab}`);
+
+    displayTab(tabElement)
+  })
+});
 
 
 let userArray = getUser() || [];
