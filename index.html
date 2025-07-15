@@ -9,14 +9,23 @@
 </head>
 <body>
   <header>
+    <section id="searchBar">
+      <label for="searchInput" id="searchInputLabel">🔎
+      <input type="text" id="searchInput" class="searchInput" placeholder="Search by name or service">
+    </label>
+      <p>
+        <button id="searchBtn">Search</button>
+        <button id="resetBtn">Reset</button>
+      </p>
+    </section>
     <h1>Client Booking Dashboard</h1>
   </header>
 
 <main>
-  <section class="card">
-    <label for="searchInput" id="searchInputLabel">🔎
-      <input type="text" id="searchInput" class="searchInput" placeholder="Search by name or service">
-    </label>
+  <section id="allClients" class="card">
+    <h2>Current Bookings</h2>
+    <p>Welcome to the Client Booking Dashboard. Here you can manage your bookings efficiently.</p>
+    <p>Use the form below to add new bookings. You can also clear all bookings at once.</p>
     <p id="bookingCount">You have <span id="count" class="count"></span> current booking<span id="plural" class="plural">(s)</span></p>
     <form id="bookingForm" class="card">
     
@@ -39,9 +48,11 @@
     <button id="clearBtn">Clear All</button>
   </section>
 
-  <ol id="bookingList" class="card">
-    <!-- Bookings will be displayed here -->
-  </ol>
+  <section id="allClients">
+    <ol id="bookingList" class="card">
+      <!-- Bookings will be displayed here -->
+    </ol>
+  </section>
 </main>
 </body>
 </html>
