@@ -24,12 +24,17 @@ allNavTabs.forEach((tab, i) => {
   tab.addEventListener('click',() => {
 
     const tabElement = document.querySelector(`#${tab.dataset.tab}`);
-
+    const navItems = document.querySelectorAll(".navTabs");
     const otherTabs = document.querySelectorAll(".tabContent");
-    hideTab(otherTabs);
 
+
+    hideTab(otherTabs);
     displayTab(tabElement);
-    
+
+
+    navItems.forEach(nav => nav.classList.remove('active'));
+    tab.classList.add('active');
+
   })
 });
 
@@ -55,7 +60,9 @@ addBookingBtn.addEventListener('click', e => {
   if(nameValue && serviceValue && dateValue){
     let user = new MakeUser(nameValue,serviceValue,dateValue);
 
-    if(checkDuplicateEntry(userArray,user)) return;
+    if(checkDuplicateEntry(userArray,user)) {
+      showToast("duplicate");
+      return};
     displayBooking(user);
     userArray.push(user);
 
@@ -63,9 +70,11 @@ addBookingBtn.addEventListener('click', e => {
 
     saveUser(userArray);
     showBookingCount();
+    showToast("success");
 
   }else{
     alert('Please fill all fields')
+    showToast("error");
   }
 
   clientName.value = "";
@@ -97,11 +106,12 @@ clearBtn.addEventListener('click', () => {
 //Functions
 function showBookingCount(){
   count.textContent = `${userArray.length}`;
+  plural.style.display = userArray.length > 1 ? "inline-block" : "none";
 
-  if(userArray.length > 1){
-    plural.style.display = "inline-block"
-  }
+  const emptyMessage = document.querySelector('#emptyMessage');
+  emptyMessage.style.display = userArray.length === 0 ? "block" : "none";
 }
+
 
 
 function displayBooking (x){
@@ -172,4 +182,12 @@ function hideTab(x){
   x.forEach(content => {
       content.style.display = "none";
     });
+}
+
+function showToast(type) {
+  const toast = document.querySelector(`#${type}Toast`);
+  toast.classList.add("show");
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 3000);
 }

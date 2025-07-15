@@ -20,7 +20,12 @@
   </header>
 
 <main>
-   
+   <div id="toastBox">
+    <p id="successToast" class="toast">✅ Booking added successfully</p>
+    <p id="errorToast" class="toast">❌ Please fill all fields</p>
+    <p id="duplicateToast" class="toast">⚠️ This booking already exists</p>
+  </div>
+
   <section id="searchBar" class="card tabContent">
     <label for="searchInput" id="searchInputLabel">🔎
     <input type="text" id="searchInput" class="searchInput" placeholder="Search by name or service">
@@ -57,6 +62,8 @@
   </section>
 
   <section id="allClients" class="tabContent">
+    <p id="emptyMessage">No bookings yet. Add one using the form.</p>
+
     <ol id="bookingList" class="card">
       <!-- Bookings will be displayed here -->
     </ol>
