@@ -27,12 +27,16 @@
   </div>
 
   <section id="searchBar" class="card tabContent">
+    <label for="dateFilter">📅 
+      <input type="date" id="dateFilter">
+    </label>
+
     <label for="searchInput" id="searchInputLabel">🔎
     <input type="text" id="searchInput" class="searchInput" placeholder="Search by name or service">
   </label>
     <p>
       <button id="searchBtn">Search</button>
-      <button id="resetBtn">Reset</button>
+      <button id="resetDateBtn">Reset Date</button>
     </p>
   </section>
   <section id="addClients" class="card tabContent">
@@ -63,6 +67,7 @@
 
   <section id="allClients" class="tabContent">
     <p id="emptyMessage">No bookings yet. Add one using the form.</p>
+    <button id="exportBtn">Export CSV</button>
 
     <ol id="bookingList" class="card">
       <!-- Bookings will be displayed here -->
