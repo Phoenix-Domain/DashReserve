@@ -12,16 +12,16 @@
     <nav>
       <h1>Client Manager App</h1>
       <ul id="navTabs">
-        <li id="allClientsTab" data-tab="allClients">All Clients</li>
-        <li id="addClientsTab" data-tab="addClients">Add Clients</li>
-        <li id="searchTab" data-tab="searchBar">Search</li>
+        <li id="allClientsTab" class="navTabs" data-tab="allClients">All Clients</li>
+        <li id="addClientsTab" class="navTabs" data-tab="addClients">Add Clients</li>
+        <li id="searchTab" class="navTabs" data-tab="searchBar">Search</li>
       </ul>
     </nav>
   </header>
 
 <main>
    
-  <section id="searchBar" class="card navTabs">
+  <section id="searchBar" class="card tabContent">
     <label for="searchInput" id="searchInputLabel">🔎
     <input type="text" id="searchInput" class="searchInput" placeholder="Search by name or service">
   </label>
@@ -30,7 +30,7 @@
       <button id="resetBtn">Reset</button>
     </p>
   </section>
-  <section id="addClients" class="card navTabs">
+  <section id="addClients" class="card tabContent">
     <h2>Current Bookings</h2>
     <p>Welcome to the Client Booking Dashboard. Here you can manage your bookings efficiently.</p>
     <p>Use the form below to add new bookings. You can also clear all bookings at once.</p>
@@ -56,7 +56,7 @@
     <button id="clearBtn">Clear All</button>
   </section>
 
-  <section id="allClients" class="navTabs">
+  <section id="allClients" class="tabContent">
     <ol id="bookingList" class="card">
       <!-- Bookings will be displayed here -->
     </ol>
