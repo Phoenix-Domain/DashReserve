@@ -50,7 +50,7 @@
       <input type="text" id="clientName" placeholder="Client Name" />
       </label>
     
-      <select id="serviceType">
+      <select title="List of Services" id="serviceType">
         <option value="Select Service">Select Service</option>
         <option value="Website Design">Website Design</option>
         <option value="Website Development">Website Development</option>
@@ -60,14 +60,14 @@
       </select>
       <label for="bookingDate">Booking Date: <input type="date" id="bookingDate" /></label>
       
-      <button id="addBookingBtn">Book Now</button>
+      <button type="button" id="addBookingBtn">Book Now</button>
     </form>
     <button id="clearBtn">Clear All</button>
   </section>
 
   <section id="allClients" class="tabContent">
     <p id="emptyMessage">No bookings yet. Add one using the form.</p>
-    <button id="exportBtn">Export CSV</button>
+    <button type="button" id="exportBtn">Export CSV</button>
 
     <ol id="bookingList" class="card">
       <!-- Bookings will be displayed here -->
