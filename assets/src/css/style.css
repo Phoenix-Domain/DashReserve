@@ -38,8 +38,6 @@ nav{
   box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
 }
 
-
-
 nav ul{
   list-style: none;
   display: flex;
@@ -132,7 +130,6 @@ header h1{
   box-shadow: 0 0 5px var(--accent-color);
 }
 
-
 #count{
   font-weight:bold;
   color:var(--btn-bg-color);
@@ -183,13 +180,6 @@ header h1{
   animation: fadeSlide 3s ease forwards;
 }
 
-@keyframes fadeSlide {
-  0% { opacity: 0; transform: translateY(20px); }
-  10% { opacity: 1; transform: translateY(0); }
-  90% { opacity: 1; }
-  100% { opacity: 0; transform: translateY(-20px); }
-}
-
 #emptyMessage {
   text-align: center;
   font-style: italic;
@@ -202,3 +192,11 @@ header h1{
   color: var(--accent-color);
   font-weight: bold;
 }
+
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-20px); }
+}
+
